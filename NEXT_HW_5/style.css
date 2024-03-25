@@ -1,0 +1,162 @@
+body {
+    background-color: #f0f0f09d;
+}
+.pic img {
+    margin-top: 4px;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    width: 185px;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.container button {
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 185px;
+    font-weight: bold;
+    font-size: 12px;
+    align-items: center;
+    background-color: white;
+    margin-top: -4px;
+    margin-bottom: 7px;
+}
+.fa-chevron-right {
+    color: #999; /* 아이콘의 색상을 회색으로 지정 */
+}
+.outbox {
+    padding: 12px;
+    border-radius: 12px;
+    background-color: white;
+    width: 161px;
+}
+.outbox button {
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0a3;
+    font-size: 6px;
+    font-weight: bold;
+    height: 17px;
+}
+.title {
+    font-size: 6px;
+    font-weight: bold;
+    color: #555;
+}
+.money {
+    font-size: 9px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+.middle {
+    margin-left: 7px;
+}
+.box1 {
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: flex-start;
+}
+.box1 button {
+    margin-left: auto;
+}
+.box2 {
+    display: flex;
+    margin-bottom: 5px;
+}
+.box2 button {
+    margin-left: auto;
+}
+.box3 {
+    display: flex;
+    margin-bottom: 5px;
+}
+.box3 button {
+    margin-left: auto;
+}
+.box4 {
+    display: flex;
+    margin-bottom: 5px;
+}
+.box4 button {
+    margin-left: auto;
+}
+.box5 {
+    display: flex;
+    margin-bottom: 5px;
+}
+.box5 button {
+    margin-left: auto;
+}
+.box6 {
+    display: flex;
+    margin-bottom: 5px;
+}
+.box6 button {
+    margin-left: auto;
+}
+.box7 {
+    display: flex;
+    margin-bottom: 5px;
+}
+.box8 {
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 6px;
+    font-weight: bold;
+    color: #666;
+    padding-top: 2px;
+    margin-bottom: -4px;
+}
+.divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+}
+
+.bottom {
+    margin-top: 8px;
+    margin-left: -10px;
+    margin-bottom: -25px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-left: 5px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-around;
+    width: 195px;
+    font-size: 10px;
+    color: #999;
+    background-color: white;
+}
+.one {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    color: black;
+}
+.two {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.three {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.four {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.five {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
