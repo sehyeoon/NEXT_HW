@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-Dyz88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXT1nuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'info.css'%}">
+    <style>
+      .text-animation {
+        opacity: 0;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+      }
+    
+      @keyframes fadeInAndOut {
+        0%, 100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+    
+      @keyframes fadeOut {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    
+      .text-animation:nth-child(1) {
+        animation-name: fadeInAndOut;
+        animation-delay: 1s;
+      }
+    
+      .text-animation:nth-child(2) {
+        animation-name: fadeInAndOut;
+        animation-delay: 4s;
+      }
+    
+      .text-animation:nth-child(3) {
+        animation-name: fadeOut;
+        animation-delay: 7s;
+      }
+    </style>
+</head>
+<body>
+  <nav class="top">
+    <div class="list">
+      <div class="logo"><a href="#info">About<span>me.</span></a></div>
+      <ul class ="menu">
+        <li><a href="#info" class="menubtn" id="infoID">Info</a><li>
+        <li><a href="#about" class="menubtn" id="aboutID">About</a><li>
+        <li><a href="#sehyeon" class="menubtn">Sehyeon</a><li>
+        <li><a href="{% url 'project' %}" class="menubtn">Project</a><li>
+        <li><a href="#contact" class="menubtn">Contact</a><li>
+        </ul>
+        <div class="menubtn">
+          <i class="fas fa-bars"></i>
+        </div>
+    </div>
+  </nav>
+
+  <img src="{% static 'img/me.jpg' %}" style="width: 600px; height: auto;" />
+  
+  <section class="info" id="info">
+  <div class="list">
+    <div class="text-animation" style="margin-left: 50px;">안녕하세요</div>
+    <div class="text-animation" style="margin-left: 20px;">Hello</div>
+    <div class="text-animation" style="margin-left: 150px;">Здравствуйте</div>
+  </div>
+
+
+
+
+<!-- 
+  <section class="contact" id="contact">
+  <div class="list">
+    <h2 class="title">Contact</h2>
+    <div class="contact-content">
+      <div class="icon">
+        <div class="icon-content">
+          <i class="fas fa-user"></i>
+          <div class="text">
+            <div class="head">Phone</div>
+            <div class="tail">010-9425-0494</div>
+          </div>
+        </div>
+        <div class="icon-content">
+          <i class="fas fa-envelope"></i>
+          <div class="text">
+            <div class="head">E-mail</div>
+            <div class="tail">0494shd@naver.com</div>
+          </div>
+        </div>
+        <div class="icon-content">
+          <i class="fas fa-map-marked-alt"></i>
+          <div class="text">
+            <div class="head">Address</div>
+            <div class="tail">서울시 성북구</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    
+
+</body>
+</html>

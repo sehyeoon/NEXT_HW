@@ -1,5 +1,5 @@
 """
-URL configuration for CountProject project.
+URL configuration for PortfolioProject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from CountApp import views
+from PortfolioApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('count/', views.count, name='count'),
-    path('result/', views.result, name='result'),
+    path('info/', views.info, name='info'),
+    path('project/', views.project, name='project'),
 ]

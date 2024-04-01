@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Hi+Melody&family=Noto+Serif+KR:wght@500&family=Poppins:wght@400;500;600;700&family=Stylish&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+.top {
+    position: fixed;
+    width: 100px;
+    padding: 20px 0;
+    font-family: 'Ubuntu', sans-serif;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.top .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top .logo a {
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 20px;
+    color: rgb(130, 130, 130);
+}
+
+.top .logo a span {
+    color: #f7941e;
+    transition: all 0.3s ease;
+}
+
+.top .menu li {
+    list-style: none;
+    margin: 5px 20px 0 0;
+    display: inline-block;
+}
+
+.top .menu li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.top .menu li a:hover {
+    color:#f7941e;
+}
+
+.info .about .sehyeon .project .contact{
+    padding-top: 86px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.list {
+    max-width: 1300px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+.info {
+    display: flex;
+    height: 100vh;
+    background-size: cover;
+    min-height: 500px;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.info .top {
+    margin: auto 0 auto 40px;
+}
+
+.about {
+    padding: 100px 0;
+    transition: all 0.3s ease;
+}
+
+
+.section {
+    padding: 100px 0;
+}
+
+.info .text-animation {
+    color: white;
+    font-size: 100px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.about, .sehyeon, .project, .contact {
+    font-family: 'Poppins', sans-serif;
+}
+
+.about .title, .sehyeon .title, .project .title, .contact .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin: 30px 0 100px 0;
+    padding-bottom: 8px;
+    font-family: 'Ubuntu', sans-serif;
+} 
+
+.about .title::before, .sehyeon .title::before, .project .title::before, .contact .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 160px;
+    height: 3px;
+    background-color: black;
+    transform: translateX(-50%);
+}   
+
+.about .title::after, .sehyeon .title::after, .project .title::after, .contact .title::after {
+    content: "";
+    position: absolute;
+    bottom: -38px;
+    left: 50%;
+    font-size: 20px;
+    color: #f7941e;
+    padding: 5px;
+    background-color: white;
+    transform: translateX(-50%);
+}  
+
+.about .project-content, .contact .contact-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+body {
+    background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNjExMjFfODgg%2FMDAxNDc5NjY2NjAxNDI1.JrqQJU3uoC0GItEUZWolVKTkionrkn4_0Mnvar3N00Qg.VFWev44hNw062xtjf8Q5LMxI53XLenFkw-bLODiT7I0g.GIF.sunheepark7%2F%25B9%25E3%25C7%25CF%25B4%25C3_2_.gif&type=sc960_832_gif');
+    background-size: cover;
+    background-position: center;
+}
+
+a:visited {
+    color: #222;
+}
+
+.list.sticky {
+    padding: 20px 0;
+  }
+
+  .list.sticky .logo a span {
+    color: white;
+  }
+
+  .list.sticky .menu li a:hover {
+    color: white;
+  }
