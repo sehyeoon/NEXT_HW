@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA_Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Article</title>
+</head>
+<body>
+    <h2>New Article</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="id_title">Title:</label><br>
+        {{ form.title }}<br>
+        <label for="id_content">Content:</label><br>
+        {{ form.content }}<br>
+        <label for="id_category">Category:</label><br>
+        {{ form.category }}<br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
