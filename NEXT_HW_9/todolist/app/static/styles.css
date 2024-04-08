@@ -1,0 +1,146 @@
+/* styles.css */
+
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.task-details .box {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: white;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.box h2 {
+    font-weight: bold;
+}
+
+.box p {
+    margin-top: 5px;
+    margin-left: 25px;
+}
+
+i {
+    margin-right: 15px; /* 아이콘과 제목 사이의 여백 조절 */
+}
+
+
+h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+/* Task list styles */
+.todo-list {
+    margin-top: 20px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.task h2 {
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+
+.task p {
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #bd2130;
+}
+
+/* Form styles */
+.task-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.task-form input[type="text"],
+.task-form textarea,
+.task-form input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.task-form button {
+    background-color: #28a745;
+}
+
+.task-form button:hover {
+    background-color: #218838;
+}
+
+.task-link:visited {
+    color: inherit;
+}

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Detail</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Detail</h1>
+        <div class="task-details">
+            <div class="box">
+                <h2><i class="fa-solid fa-bolt"></i>{{ task.title }}</h2>
+                <p>{{ task.description }}</p>
+            </div>
+            <p style="margin-top: 20px; margin-bottom: 20px;">Deadline: {{ task.deadline }}</p>
+            <!-- D-day를 여기에 표시할 수 있습니다. -->
+        </div>
+        <div>
+            <a href="{% url 'update' task.id %}" class="btn">Update</a>
+            <form action="{% url 'delete' task.id %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="delete-btn">Delete</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

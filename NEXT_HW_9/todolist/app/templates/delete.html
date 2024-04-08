@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Detail</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Detail</h1>
+        <div class="task-details">
+            <h2>{{ task.title }}</h2>
+            <p>{{ task.description }}</p>
+            <p>Deadline: {{ task.deadline }}</p>
+            <!-- D-day를 여기에 표시할 수 있습니다. -->
+        </div>
+        <a href="{% url 'edit_task' task.id %}" class="btn">Edit Task</a>
+        <form action="{% url 'delete_task' task.id %}" method="POST" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn delete-btn">Delete Task</button>
+        </form>
+    </div>
+</body>
+</html>
