@@ -1,0 +1,10 @@
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; /* 또는 absolute, 페이지 구조에 따라 다름 */
+    bottom: 0;
+}
+ul {
+    list-style-type: none;
+}

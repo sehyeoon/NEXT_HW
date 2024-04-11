@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../static/category.css" />
+        <title>category</title>
+    </head>
+    <body>
+        <div class="banner">
+            <h1>My Blog</h1>
+        </div>
+        <div class="mid">
+            <div class="header">
+                <h2>글 목록</h2>
+                <ul>
+                    {% for article in articles %}
+                    <a href="{% url 'detail' article.id %}"> <li>{{ article.title }}</li></a>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="header" style="align-items: center">
+                <a href="{% url 'new' %}"><div class="writeBtn">글 쓰러가기</div></a>
+            </div>
+        </div>
+    </body>
+</html>

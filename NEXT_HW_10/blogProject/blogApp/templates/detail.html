@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}" />
+{% endblock %}
+
+{% block title %}
+Detail
+{% endblock %}
+
+{% block content %}
+<div class="banner">
+    <h1>My Blog</h1>
+</div>
+<div class="mid">
+    <div class="header">
+        <h2>{{ article.title }}</h2>
+        <div class="content"><p>{{ article.content }}</p></div>
+        <form action="{% url 'delete_article' article_id=article.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+    <div class="header">
+        <h3>댓글</h3>
+        <form action="{% url 'detail' article.id %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="content" placeholder="댓글을 입력하세요" />
+            <input type="submit" value="댓글 작성" />
+        </form>
+        <ul>
+            {% for comment in comments %}
+            <div class="comment">
+                <li>{{ comment.content }}</li>
+                <ul class="reply">
+                    {% for reply in comment.replies.all %}
+                    <li>{{ reply.content }}</li>
+                    {% endfor %}
+                </ul>
+                <form method="post" action="{% url 'detail' article.id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="parent_id" value="{{ comment.id}}" />
+                    <textarea name="content" placeholder="댓글을 입력하세요"></textarea>
+                    <input type="submit" value="대댓글 작성" />
+                </form>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

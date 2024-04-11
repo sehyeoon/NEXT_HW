@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %} {% block css %}<link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'list.css' %}"
+/>
+{% endblock %} {% block title %} Article List {% endblock %} {% block content %}
+<div class="banner">
+    <h1>My Blog</h1>
+</div>
+<div class="mid">
+    <div class="header">
+        <h2>전체 글 목록</h2>
+        <ul>
+            {% for article in articles %}
+            <a href="{% url 'detail' article.id %}">
+                <li>{{ article.title }}</li>
+            </a>
+            <form action="{% url 'delete_article' article_id=article.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Delete">
+            </form>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="header">
+        <h2>카테고리</h2>
+        <ul>
+            {% for category_id, category_name, count in categories_with_counts %}
+            <a href="{% url 'category' category_id %}"> <li>{{ category_name }} {{count}}</li></a>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="header" style="align-items: center">
+        <a href="{% url 'new' %}"><div class="writeBtn">New</div></a>
+    </div>
+</div>
+{% endblock %}
