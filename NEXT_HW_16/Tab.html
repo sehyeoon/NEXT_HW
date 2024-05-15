@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar Example</title>
+  <link rel="stylesheet" href="tab.css">
+</head>
+<body>
+  <div class="content about" id="content">
+    <h1>About</h1>
+    <p>Custom Software Development Company</p>
+  </div>
+  <div class="navbar">
+    <button class="nav-button about" onclick="showContent('About')">About</button>
+    <button class="nav-button" onclick="showContent('Products')">Products</button>
+    <button class="nav-button" onclick="showContent('Technology')">Technology</button>
+    <button class="nav-button" onclick="showContent('Downloads')">Downloads</button>
+  </div>
+
+  <script>
+    function showContent(content) {
+        const contentDiv = document.getElementById('content');
+        const header = contentDiv.querySelector('h1');
+        const paragraph = contentDiv.querySelector('p');
+        const buttons = document.querySelectorAll('.nav-button');
+    
+        // Reset all buttons
+        buttons.forEach(button => button.classList.remove('active'));
+    
+        // Update content and set active button
+        if (content === 'About') {
+          header.textContent = 'About';
+          paragraph.textContent = 'Custom Software Development Company';
+          contentDiv.className = 'content about';
+          for(let i = 0;i<buttons.length;i++){
+            buttons[i].className = 'nav-button';
+          }
+          buttons[0].classList.add('about');
+        } else if (content === 'Products') {
+          header.textContent = 'Products';
+          paragraph.textContent = 'Explore our products.';
+          contentDiv.className = 'content products';
+          for(let i = 0;i<buttons.length;i++){
+            buttons[i].className = 'nav-button';
+          }
+          buttons[1].classList.add('products');
+        } else if (content === 'Technology') {
+          header.textContent = 'Technology';
+          paragraph.textContent = 'Introduce our technology';
+          contentDiv.className = 'content technology';
+          for(let i = 0;i<buttons.length;i++){
+            buttons[i].className = 'nav-button';
+          }
+          buttons[2].classList.add('technology');
+        } else if (content === 'Downloads') {
+          header.textContent = 'Downloads';
+          paragraph.textContent = 'Here you can download and experience our products!';
+          contentDiv.className = 'content downloads';
+          for(let i = 0;i<buttons.length;i++){
+            buttons[i].className = 'nav-button';
+          }
+          buttons[3].classList.add('downloads');
+        }
+      }
+  </script>
+</body>
+</html>

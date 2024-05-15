@@ -1,0 +1,84 @@
+/* General page styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    color: white;
+    text-align: center;
+    padding: 50px;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Background colors for each content */
+.content.about {
+    background-color: #ff6f61; /* Coral */
+}
+
+.content.products {
+    background-color: #83cbf6; /* Sky Blue */
+}
+
+.content.technology {
+    background-color: #8bdcb5; /* Mint */
+}
+
+.content.downloads {
+    background-color: #ffaab6; /* Salmon */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    background-color: #333;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.nav-button {
+    flex: 1;
+    width: 25%;
+    padding: 10px;
+    border: none;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 10px;
+}
+
+.nav-button.about{
+    background-color: #ff6f61;
+}
+
+.nav-button.products{
+    background-color: #83cbf6;
+}
+
+.nav-button.technology{
+    background-color: #8bdcb5;
+}
+
+.nav-button.downloads{
+    background-color: #ffaab6;
+}
+
+.nav-button.active {
+    background-color: #ff6f61;
+}
+
+.nav-button:hover {
+    background-color: #555;
+}
