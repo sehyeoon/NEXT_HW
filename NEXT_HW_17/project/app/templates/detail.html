@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% block title %} Detail!{% endblock %} {% block css%}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+{% endblock %} {% block content %}
+<div class="detail-post_container">
+  <div class="detail_title">제목: {{post.title}}</div>
+  <div class="detail_content">내용: {{post.content}}</div>
+  <div class="detail_content">작성자: {{post.author.username}}</div>
+  <div class="detail-post_btn">
+    <a href="{% url 'home' %}">홈 화면</a>
+    {% if user.is_authenticated and user.pk == post.author.pk %}
+    <a href="{% url 'edit' post.pk %}">수정하기</a>
+    <a href="{% url 'delete' post.pk %}">삭제하기</a>{% endif %}
+    <span class="like-count">Likes {{ post.likes.count }}</span>
+  </div>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="content" id="comment-content" />
+    <button type="submit" style="margin-bottom: 10px;">댓글 작성</button>
+  </form>
+  <button class="like-button"><i class="fas fa-heart"></i> 좋아요</button>
+
+  {% for comment in post.comments.all %}
+  <li>
+    <span>{{comment.content}} </span>
+    <span>{{comment.author.username}} </span>
+    {% if user.pk == comment.author.pk and user.is_authenticated %}
+    <a href="{% url 'delete_comment' post.pk comment.pk %}">삭제</a>
+    {% endif %}
+  </li>
+  {% endfor %}
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  const likeButton = document.querySelector(".like-button");
+  const likeCount = document.querySelector(".like-count");
+
+  const handleLike = async () => {
+    try {
+      const res = await axios.post('/like', {post_pk: "{{post.pk}}"})
+      likeCount.innerHTML = "Likes " + res.data.like_count;
+      const postWrapper = document.querySelector(`.post_wrapper[data-post-pk="${{post.pk}}"]`);
+
+      if (res.data.liked) {
+        postWrapper.classList.add('liked');
+      } else {
+        postWrapper.classList.remove('liked');
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+ 
+  likeButton.addEventListener("click", handleLike);
+</script>
+
+<script>
+  const commentForm = document.getElementById("comment-form");
+  const commentContent = document.getElementById("comment-content");
+
+  const handleSubmitComment = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('/detail/{{ post.pk }}/', {
+        content: commentContent.value
+      });
+      const newComment = response.data.comment;
+      const commentList = document.getElementById("comment-list");
+      const newCommentElement = document.createElement("li");
+      newCommentElement.innerHTML = `
+        <span>${newComment.content}</span>
+        <span>${newComment.author.username}</span>
+        {% if user.pk == newComment.author.pk and user.is_authenticated %}
+          <a href="{% url 'delete_comment' post.pk newComment.pk %}">삭제</a>
+        {% endif %}
+      `;
+      commentList.appendChild(newCommentElement);
+      commentContent.value = ""; 
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  commentForm.addEventListener("submit", handleSubmitComment);
+</script>
+
+{% endblock %}
