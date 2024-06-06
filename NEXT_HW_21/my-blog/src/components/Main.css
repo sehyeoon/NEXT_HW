@@ -1,0 +1,36 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .post {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .post img {
+    max-width: 20%;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .post h2 {
+    margin: 0 0 10px 0;
+  }
+  
+  .post p {
+    margin: 0 0 10px 0;
+  }
+  
+  .create-link {
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
